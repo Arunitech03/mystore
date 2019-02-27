@@ -7,6 +7,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -64,6 +65,13 @@ public class ProductController {
 		//productListRepository.save(productentity);
 		model.addAttribute("products", productListRepository.findAll());
 		return "products";
+	}
+	
+	@RequestMapping(path="/delete/{productid}", method = RequestMethod.GET)
+	public String deleteProduct (@PathVariable(name = "productid") String productid) {
+		productListRepository.delete(new Integer(productid));
+		//model.addAttribute("products", productListRepository.findAll());
+		return "redirect:/listproduct/showproduct";
 	}
 	
 	
