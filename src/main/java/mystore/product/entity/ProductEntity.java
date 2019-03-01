@@ -1,4 +1,4 @@
-package mystore.product.entity;
+/*package mystore.product.entity;
 
 import java.io.Serializable;
 import javax.persistence.Column;
@@ -17,9 +17,15 @@ public class ProductEntity implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	
-	@Column(name="productid")
-    private int productid; 
+	@Column(name="product_id")
+    private int productId; 
 	
+	public int getProductId() {
+		return productId;
+	}
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
 	@Column(name="name")
     private String name;
 	
@@ -29,11 +35,9 @@ public class ProductEntity implements Serializable{
 	@Column(name="description")	
 	private String description;
 	
-	   public int getproductId() {
-		      return productid;
-		   }
-		   public void setproductId(int productid) {
-		      this.productid = productid;
+	   
+		   public void setproductId(int productId) {
+		      this.productId = productId;
 		   }
 		   public String getName() {
 		      return name;
@@ -55,3 +59,4 @@ public class ProductEntity implements Serializable{
 			}
 
 }
+*/

@@ -2,9 +2,9 @@ package mystore;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.CrudRepository;
-import mystore.product.entity.ProductEntity;
+import mystore.product.model.Product;
 
-public interface ProductListRepository extends JpaRepository<ProductEntity, Integer> {
+public interface ProductRepository extends CrudRepository<Product, Integer> {
 
 	}
 
