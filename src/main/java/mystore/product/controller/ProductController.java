@@ -40,9 +40,16 @@ public class ProductController {
 	}
 	
 	@RequestMapping(path="/edit/{productid}", method = RequestMethod.GET)
-	public String editproduct(Model model, @PathVariable(value = "productid") int productid) {
-		model.addAttribute("product", productRepository.findOne(productid));
+	public String editProduct(Model model, @PathVariable(value = "productid") int productid) {
+		model.addAttribute("product", productRepository.findById(productid));
 		return "editproduct";
+		
+	}
+	
+	@RequestMapping(path="/delete/{productid}", method = RequestMethod.GET)
+	public String deleteProduct(@PathVariable(value = "productid") int productid) {
+		productRepository.deleteById(productid);
+		return "redirect:/product/view";
 		
 	}
 	
