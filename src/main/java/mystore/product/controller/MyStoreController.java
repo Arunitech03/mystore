@@ -12,11 +12,11 @@ public class MyStoreController {
 	
 	@RequestMapping("/login")
     public String login() {
-        return "Login Page";
+        return "login";
     }
 	
-	@RequestMapping("/first")
+	@RequestMapping("/home")
     public String first() {
-        return "first Page";
+        return "home";
     }
 }
