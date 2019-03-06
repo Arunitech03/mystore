@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
-    <title>Products</title>
+<title>Products</title>
 </head>
 <body>
-<div class="container">
-    <div th:if="${not #lists.isEmpty(products)}">
-        <h2>All Products</h2>
-        <table class="table table-striped">
-            <tr>
-	            <th>Id</th>
-                <th>Name</th>
-                <th>Price</th>
-                <th>Description</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            <tr th:each="product : ${products}">
-                <td th:text="${product.productId}">Id</td> 
-                <td th:text="${product.name}">Name</td>
-                <td th:text="${product.price}">price</td>
-                <td th:text="${product.description}">Description</td>
-                <td><a th:href="${'/product/edit/'+product.productId}" class="btn btn-default">Edit</a></td>
-                <td><a th:href="${'/product/delete/'+product.productId}" class="btn btn-danger">Delete</a></td>                         
-            </tr>
-            <tr>
-            <br></br>
-            <td><a th:href="${'/product/add'}" class="btn btn-danger">Add New Product</a></td> 
-            </tr>
-        </table>
-    </div>
-</div>
+	<div class="container">
+		<div th:if="${not #lists.isEmpty(products)}">
+			<h2>All Products</h2>
+			<style>
+table, th, td {
+	text-align: left;
+}
+</style>
+			<table class="table table-striped">
+				<tr>
+					<th>Id</th>
+					<th>Name</th>
+					<th>Price</th>
+					<th>Description</th>
+					<th>Edit</th>
+					<th>Delete</th>
+				</tr>
+				<tr th:each="product : ${products}">
+					<td th:text="${product.productId}">Id</td>
+					<td th:text="${product.name}">Name</td>
+					<td th:text="${product.price}">price</td>
+					<td th:text="${product.description}">Description</td>
+					<td><a th:href="${'/product/edit/'+product.productId}"
+						class="btn btn-default">Edit</a></td>
+					<td><a th:href="${'/product/delete/'+product.productId}"
+						class="btn btn-danger">Delete</a></td>
+				</tr>
+			</table>
+			<br />
+			<p>
+				<a th:href="${'/product/add'}" class="btn btn-danger">Add New
+					Product</a>
+			</p>
+		</div>
+	</div>
 </body>
 </html>
